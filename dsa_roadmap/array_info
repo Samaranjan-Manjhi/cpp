@@ -1,0 +1,595 @@
+#####   Basic Data Structures
+
+1. Arrays are static data structures that store elements of the same type in contiguous memory locations.
+Refer :- https://www.tutorialspoint.com/data_structures_algorithms/array_data_structure.htm
+         https://www.tpointtech.com/cpp-arrays
+
+
+#What is an Array?
+An array is a type of linear data structure that is defined as a collection of elements with same or different data types. They exist in both single dimension and multiple dimensions. These data structures come into picture when there is a necessity to store multiple elements of similar nature together at one place.
+
+The difference between an array index and a memory address is that the array index acts like a key value to label the elements in the array. However, a memory address is the starting address of free memory available.
+
+Following are the important terms to understand the concept of Array.
+    Element − Each item stored in an array is called an element.
+    Index − Each location of an element in an array has a numerical index, which is used to identify the element.
+
+#Syntax
+Creating an array in C and C++ programming languages −
+data_type array_name[array_size]={elements separated by commas}
+or,
+data_type array_name[array_size];
+
+#Need for Arrays
+Arrays are used as solutions to many problems from the small sorting problems to more complex problems like travelling salesperson problem. There are many data structures other than arrays that provide efficient time and space complexity for these problems, so what makes using arrays better? The answer lies in the random access lookup time.
+
+Arrays provide O(1) random access lookup time. That means, accessing the 1st index of the array and the 1000th index of the array will both take the same time. This is due to the fact that array comes with a pointer and an offset value. The pointer points to the right location of the memory and the offset value shows how far to look in the said memory.
+
+Therefore, in an array with 6 elements, to access the 1st element, array is pointed towards the 0th index. Similarly, to access the 6th element, array is pointed towards the 5th index.
+
+#Array Representation
+Arrays are represented as a collection of buckets where each bucket stores one element. These buckets are indexed from '0' to 'n-1', where n is the size of that particular array. For example, an array with size 10 will have buckets indexed from 0 to 9.
+This indexing will be similar for the multidimensional arrays as well. If it is a 2-dimensional array, it will have sub-buckets in each bucket. Then it will be indexed as array_name[m][n], where m and n are the sizes of each level in the array.
+
+As per the above illustration, following are the important points to be considered.
+    Index starts with 0.
+    Array length is 9 which means it can store 9 elements.
+    Each element can be accessed via its index. For example, we can fetch an element at index 6 as 23.
+
+#Basic Operations in Arrays
+The basic operations in the Arrays are insertion, deletion, searching, display, traverse, and update. These operations are usually performed to either modify the data in the array or to report the status of the array.
+
+Following are the basic operations supported by an array.
+    Traverse − print all the array elements one by one.
+    Insertion − Adds an element at the given index.
+    Deletion − Deletes an element at the given index.
+    Search − Searches an element using the given index or by the value.
+    Update − Updates an element at the given index.
+    Display − Displays the contents of the array.
+
+In C, when an array is initialized with size, then it assigns defaults values to its elements in following order.
+Data Type	Default Value
+bool 	false
+char 	0
+int 	     0
+float 	0.0
+double 	0.0f
+void 	
+wchar_t 	0
+
+#Array - Insertion Operation
+
+In the insertion operation, we are adding one or more elements to the array. Based on the requirement, a new element can be added at the beginning, end, or any given index of array. This is done using input statements of the programming languages.
+Algorithm
+
+Following is an algorithm to insert elements into a Linear Array until we reach the end of the array −
+1. Start
+2. Create an Array of a desired datatype and size.
+3. Initialize a variable 'i' as 0.
+4. Enter the element at ith index of the array.
+5. Increment i by 1.
+6. Repeat Steps 4 & 5 until the end of the array.
+7. Stop
+
+Example :-
+#include <iostream>
+#include <stdio.h>
+#include <array>
+
+using namespace std;
+
+int main(int argc, char* argv)
+{
+     int n;
+     cout << "Enter the size of the array: ";
+     cin >> n;
+
+     int arr[n];
+     cout << "Array elements before insertion are : ";
+     for(int i=0; i<n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+     cout << endl;
+
+     cout << "Enter the array elements: ";
+     for(int i=0; i<n; i++)
+     {
+          cin >> arr[i];
+     }
+     cout << endl;
+
+     cout << "Array elements after insertion are : ";
+     for(int i=0; i<n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+     cout << endl;
+
+     return 0;
+}
+
+
+
+#Array - Deletion Operation
+
+In this array operation, we delete an element from the particular index of an array. This deletion operation takes place as we assign the value in the consequent index to the current index.
+Algorithm
+Consider LA is a linear array with N elements and K is a positive integer such that K<=N. Following is the algorithm to delete an element available at the Kth position of LA.
+
+1. Start
+2. Set J = K
+3. Repeat steps 4 and 5 while J < N
+4. Set LA[J] = LA[J + 1]
+5. Set J = J+1
+6. Set N = N-1
+7. Stop
+
+Example :-
+#include <iostream>
+#include <stdio.h>
+#include <array>
+
+using namespace std;
+
+int main(int argc, char* argv)
+{
+     int n;
+     cout << "Enter the size of the array: ";
+     cin >> n;
+     int del;
+     cout << "Enter the elements to delete from the array: ";
+     cin >> del;
+     int arr[n];
+     cout << "Array elements before insertion are : ";
+     for(int i=0; i<n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+     cout << endl;
+
+     cout << "Enter the array elements: ";
+     for(int i=0; i<n; i++)
+     {
+          cin >> arr[i];
+     }
+     cout << endl;
+
+     cout << "Array elements after insertion are : ";
+     for(int i=0; i<n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+     cout << endl;
+
+     for(int i=0;i<n;i++)
+     {
+          if(arr[i] == del)
+          {
+               arr[i] = arr[i+1];
+               n = n-1;
+          }
+     }
+
+     cout << "Array elements after deletion are : ";
+     for(int i=0; i<n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+     cout << endl;
+
+     return 0;
+}
+
+#Array - Search Operation
+
+Searching an element in the array using a key; The key element sequentially compares every value in the array to check if the key is present in the array or not.
+Algorithm
+Consider LA is a linear array with N elements and K is a positive integer such that K<=N. Following is the algorithm to find an element with a value of ITEM using sequential search.
+
+1. Start
+2. Set J = 0
+3. Repeat steps 4 and 5 while J < N
+4. IF LA[J] is equal ITEM THEN GOTO STEP 6
+5. Set J = J +1
+6. PRINT J, ITEM
+7. Stop
+
+Example :-
+#include <iostream>
+#include <stdio.h>
+#include <array>
+
+using namespace std;
+
+int main(int argc, char* argv)
+{
+     int n;
+     cout << "Enter the size of the array: ";
+     cin >> n;
+     int del;
+     cout << "Enter the elements to serach from the array: ";
+     cin >> del;
+     int arr[n];
+     cout << "Array elements before insertion are : ";
+     for(int i=0; i<n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+     cout << endl;
+
+     cout << "Enter the array elements: ";
+     for(int i=0; i<n; i++)
+     {
+          cin >> arr[i];
+     }
+     cout << endl;
+
+     cout << "Array elements after insertion are : ";
+     for(int i=0; i<n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+     cout << endl;
+     bool omk = false;
+     for(int i=0;i<n;i++)
+     {
+          if(arr[i] == del)
+          {
+               //arr[i] = arr[i+1];
+               //n = n-1;
+               cout << "Element " << del << " found at index " << i << endl;
+               omk = true;
+               break;
+          }
+          /*else
+            {
+            cout << "Elemets not found in the array.\n"; 
+            }*/
+     }
+     if(!omk)
+     {
+          cout << "Elemets not found in the array.\n";
+     }
+     /*
+        cout << "Array elements after deletion are : ";
+        for(int i=0; i<n; i++)
+        {
+        cout << arr[i] << " ";
+        }
+        cout << endl;
+      */
+     return 0;
+}
+
+#Array - Traversal Operation
+
+This operation traverses through all the elements of an array. We use loop statements to carry this out.
+Algorithm
+
+Following is the algorithm to traverse through all the elements present in a Linear Array −
+
+1  Start
+2. Initialize an Array of certain size and datatype.
+3. Initialize another variable i with 0.
+4. Print the ith value in the array and increment i.
+5. Repeat Step 4 until the end of the array is reached.
+6. End
+
+Example :-
+#include <iostream>
+#include <stdio.h>
+#include <array>
+
+using namespace std;
+
+int main(int argc, char* argv)
+{
+     int n;
+     cout << "Enter the size of the array: ";
+     cin >> n;
+     int arr[n];
+     cout << "Array elements before insertion are : ";
+     for(int i=0; i<n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+     cout << endl;
+
+     cout << "Enter the array elements: ";
+     for(int i=0; i<n; i++)
+     {
+          cin >> arr[i];
+     }
+     cout << endl;
+
+     cout << "Array elements after insertion are : ";
+     for(int i=0; i<n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+     cout << endl;
+
+     return 0;
+}
+
+#Array - Update Operation
+
+Update operation refers to updating an existing element from the array at a given index.
+Algorithm
+Consider LA is a linear array with N elements and K is a positive integer such that K<=N. Following is the algorithm to update an element available at the Kth position of LA.
+
+1. Start
+2. Set LA[K-1] = ITEM
+3. Stop
+
+Example :-
+#include <iostream>
+#include <stdio.h>
+#include <array>
+
+using namespace std;
+
+int main(int argc, char* argv)
+{
+     int n;
+     cout << "Enter the size of the array: ";
+     cin >> n;
+     int del;
+     cout << "Enter the elements to update from the array: ";
+     cin >> del;
+     int arr[n];
+     cout << "Array elements before insertion are : ";
+     for(int i=0; i<n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+     cout << endl;
+
+     cout << "Enter the array elements: ";
+     for(int i=0; i<n; i++)
+     {
+          cin >> arr[i];
+     }
+     cout << endl;
+
+     cout << "Array elements after insertion are : ";
+     for(int i=0; i<n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+     cout << endl;
+
+     bool get = false;
+     for(int i=0;i<n;i++)
+     {
+          if(arr[i] == del)
+          {
+               arr[i] = 2 * arr[i];
+               get = true;
+          }
+     }
+
+     if(!get)
+     {
+          arr[n-1] = 2 * arr[n-1];
+     }
+
+     cout << "Array elements after update are : ";
+     for(int i=0; i<n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+     cout << endl;
+
+     return 0;
+}
+
+Advantages of C++ Array:
+
+Several advantages of arrays in C++ are as follows:
+1. Code Optimization
+Arrays enable us to store multiple values in a single variable, which reduces the requirement for multiple individual variables.
+2. Random Access
+Array elements may be accessed using an index, which makes the retrieval of elements very fast.
+3. Easy to traverse data
+In C++, arrays can be traversed very efficiently using the loops.
+4. Easy to manipulate data
+In C++ arrays, elements can be easily updated, inserted, or deleted.
+5. Easy to sort data
+Arrays may be sorted easily via several built-in functions, such as std::sort, qsort, etc.
+Disadvantages of C++ Array
+
+Several disadvantages of arrays in C++ are as follows:
+1. Fixed size
+Array sizes are fixed, which means that they cannot be modified once their size is determined.
+2. Wastage of Memory
+If the size of the array is large and not completely utilized, memory is wasted.
+3. Lack of Flexibility
+Array sizes are static and cannot be dynamically re-sized. When the array size is declared, its size remains constant throughout the lifetime of the program.
+
+
+#Pass Array to Functions in C++
+In C++, an array is a collection of elements that are stored in a contiguous memory location and contain the same data type. In C++, we can pass the array to functions either by pointer or by reference. Arrays are mainly passed to functions to perform several operations on array elements efficiently, which helps to maintain the modular code.
+In C++, if we want to reuse the array logic, we can create a function. We need to provide only the array name to pass an array to function in C++.
+
+Syntax :-
+It has the following syntax:
+    Return_type function_name(data_ype array_name); //passing array to function      
+
+#C++ Passing Array to Function Example: print array elements
+Let's see an example of a C++ function that prints the array elements.
+Example :-
+#include <iostream>
+#include <stdio.h>
+#include <array>
+
+using namespace std;
+template <size_t N>
+
+void printArratData(const array<int, N>& arr)
+{
+     cout << "Printing Array Elements : " ;
+     for(const auto& i : arr) 
+     {
+          cout << i << " ";
+     }
+     cout << "\n";
+}
+
+
+int main(int argc, char* argv)
+{
+     array<int, 5> arr1 = {5, 10, 15, 20, 25};
+     array<int, 10> arr2 = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+     printArratData(arr1);
+     printArratData(arr2);
+
+     return 0;
+}
+
+#Methods to Passing an Array to Function in C++
+There are several methods that we can use to pass an array to function in C++. Some main methods are as follows:
+    a. Passing Array as a Pointer
+    b. Passing array as a Reference
+    c. Passing as a Sized Array
+    d. Passing as an Unsized Array
+
+a. Passing Array as a Pointer
+In C++, passing an array as a pointer is the most common and efficient method for passing an array to a function. In this method, we can pass the memory address of the initial array element that allows the function to handle arrays of the dynamic size.
+
+Syntax:-
+It has the following syntax:
+    returntype functionname (datatype *array_name)  
+
+In this syntax,
+    functionname: It represents the name of the function.
+    datatype: It represents the type of data.
+    *array_name: It represents the pointer array.
+
+C++ Passing Array as a Pointer Example
+Let us take an instance to demonstrate how we can pass an array as a pointer in C++.
+Example :-
+#include <iostream>
+#include <stdio.h>
+#include <array>
+
+using namespace std;
+
+void printData(int* ar, int size)
+{
+     for(int i=0;i<size;i++)
+     {
+          cout << ar[i] << " ";
+     }
+     cout << endl;
+}
+
+int main(int argc, char* argv)
+{
+     int n;
+     cout << "Enter the Size of the array: ";
+     cin >> n;
+     int arr[n];
+     cout << "Enter the array elements: ";
+     for(int i=0;i<n;i++)
+     {
+          cin >> arr[i];
+     }
+     printData(arr, n);
+
+     return 0;
+}
+
+
+b.Passing Array as a Reference
+In C++, passing an array as a reference to a function is an important method that is mainly used to hold the size of the array and avoid the pointer decay. It represents the function that gets a reference to the original array. It enables the function to access and modify the actual elements of the array and hold its size details at compile time.
+
+Syntax :-
+It has the following syntax:
+    returntype functionname(datatype (&arr_name)[size])  
+
+C++ Passing an Array as a Reference to Function Example
+Let us take an example to illustrate we can pass an array as a reference to a function in C++.
+
+Example :-
+#include <iostream>
+#include <stdio.h>
+#include <array>
+
+using namespace std;
+
+template <size_t N>
+void printData(int (&ar)[N])
+{
+     for(int i=0;i<N;i++)
+     {
+          cout << ar[i] << " ";
+     }
+     cout << endl;
+}
+
+int main(int argc, char* argv)
+{    
+     int arr[5] = {1, 3, 5, 7, 9};
+     printData(arr);
+
+     return 0;
+}
+
+
+A. Pass Multidimensional Array to a Function
+
+Example :-
+#include <iostream>
+#include <stdio.h>
+#include <array>
+
+using namespace std;
+
+void printData(int** arr, int rows, int cols)
+{
+     for (int i = 0; i < rows; i++)
+     {
+          for (int j = 0; j < cols; j++)
+          {
+               cout << arr[i][j] << " ";
+          }
+          cout << endl;
+     }
+}
+
+int main()
+{
+     int rows, cols;
+     cout << "Enter number of rows: ";
+     cin >> rows;
+     cout << "Enter number of columns: ";
+     cin >> cols;
+
+     int** arr = new int*[rows];
+     for (int i = 0; i < rows; i++)
+     {
+          arr[i] = new int[cols];
+     }
+
+     cout << "Enter the elements of the array: " << endl;
+     for (int i = 0; i < rows; i++)
+     {
+          for (int j = 0; j < cols; j++)
+          {
+               cin >> arr[i][j];
+          }
+     }
+
+     printData(arr, rows, cols);
+     for (int i = 0; i < rows; i++)
+     {
+          delete[] arr[i];
+     }
+     delete[] arr;
+
+     return 0;
+}
+
+          

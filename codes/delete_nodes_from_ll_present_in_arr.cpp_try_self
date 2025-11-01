@@ -1,0 +1,52 @@
+#include <iostream>
+#include <stdio.h>
+#include <array>
+
+using namespace std;
+
+struct node {
+     int data;
+     struct node *next;
+};
+
+struct node* head = NULL;
+struct node* curr = NULL;
+
+void printData(int* arr, int n)
+{
+     for(int i=0;i<n;i++)
+     {
+          cout << arr[i] << " ";
+     }     
+     cout << endl;
+     struct node* p = head;
+     while(p != NULL)
+     {
+          cout << " " << p->data << " ";
+          p = p->next;
+     }
+     cout << endl;
+}
+
+void insert(int data)
+{
+     struct node *lk = (struct node*) malloc(sizeof(struct node));
+     lk->data = data;
+     lk->next = head;
+     head = lk;
+}
+
+int main(int argc, char* argv)
+{
+     int arr[] = {10, 15, 20};
+     int size = sizeof(arr)/sizeof(arr[0]);
+     insert(50);
+     insert(40);
+     insert(30);
+     insert(20);
+     insert(10);
+     printData(arr, size);
+     return 0;
+}
+
+

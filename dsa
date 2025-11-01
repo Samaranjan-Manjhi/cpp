@@ -1,0 +1,236 @@
+######################################################################
+https://www.tutorialspoint.com/data_structures_algorithms/index.htm
+######################################################################
+
+#Data Structures and Algorithms (DSA) Tutorial
+1. Data structures and algorithms (DSA) are two important aspects of any programming language. Every programming language has its own data structures and different types of algorithms to handle these data structures.
+2. Data Structures are used to organise and store data to use it in an effective way when performing data operations.
+3. Algorithm is a step-by-step procedure, which defines a set of instructions to be executed in a certain order to get the desired output. Algorithms are generally created independent of underlying languages, i.e. an algorithm can be implemented in more than one programming language.
+4. Almost every enterprise application uses various types of data structures in one or the other way. So, as a programmer, data structures and algorithms are really important aspects of day-to-day programming.
+    #A data structure is a particular way to arrange data so it can be saved in memory and retrieved for later use where as an algorithm is a set of steps for solving a known problem. Data Structures and Algorithms is abbreviated as DSA in the context of Computer Science.
+
+
+#Why to Learn Data Structures & Algorithms (DSA)?
+As applications are getting complex and data rich, there are three common problems that applications face now-a-days.
+
+1. Data Search − Consider an inventory of 1 million(106) items of a store. If the application is to search an item, it has to search an item in 1 million(106) items every time slowing down the search. As data grows, search will become slower.
+2. Processor speed − Processor speed although being very high, falls limited if the data grows to billion records.
+3. Multiple requests − As thousands of users can search data simultaneously on a web server, even the fast server fails while searching the data.
+   To solve the above-mentioned problems, data structures come to rescue. Data can be organized in a data structure in such a way that all items may not be required to be searched, and the required data can be searched almost instantly.
+
+
+#Applications of Data Structures & Algorithms (DSA)
+From the data structure point of view, following are some important categories of algorithms −
+    Search − Algorithm to search an item in a data structure.
+    Sort − Algorithm to sort items in a certain order.
+    Insert − Algorithm to insert item in a data structure.
+    Update − Algorithm to update an existing item in a data structure.
+    Delete − Algorithm to delete an existing item from a data structure.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#####Data Structures & Algorithms - Overview
+
+#What is Data Structure?
+
+Data Structure is a systematic way to organize data in order to use it efficiently. Following terms are the foundation terms of a data structure.
+    Interface − Each data structure has an interface. Interface represents the set of operations that a data structure supports. An interface only provides the list of supported operations, type of parameters they can accept and return type of these operations.
+    Implementation − Implementation provides the internal representation of a data structure. Implementation also provides the definition of the algorithms used in the operations of the data structure.
+
+#Types of Data Structures
+Here are different type of data structures which we are going to learn in this tutorial:
+    Array Data Structure
+    String Data Structure
+    Linked List Data Structure
+    Double Linked List Data Structure
+    Circular Linked List Data Structure
+    Stack Data Structure
+    Queue Data Structure
+    Heap Data Structure
+    Hash Data Structure
+    Matrix/Grid Data Structure
+    Graph Data Structure
+    Tree Data Structure
+
+#What is Algorithm?
+
+Algorithm is a step-by-step procedure, which defines a set of instructions to be executed in a certain order to get the desired output. Algorithms are generally created independent of underlying languages, i.e. an algorithm can be implemented in more than one programming language.
+
+Types of Algorithms
+Here are different type of algorithms which we are going to learn in this tutorial:
+    DSA - Searching Algorithms
+    DSA - Sorting Algorithms
+    DSA - Approximation Algorithms
+    DSA - Divide and Conquer Algorithms
+    DSA - Greedy Algorithms
+    DSA - Recursion Algorithm
+    DSA - Backtracking Algorithm
+    DSA - Randomized Algorithms
+    DSA - Dynamic Programming
+    DSA - Pattern Searching
+    DSA - Mathematical Algorithms
+    DSA - Geometric Algorithms
+    DSA - Bitwise Algorithms
+    DSA - Branch and Bound Algorithm
+
+#Characteristics of a Data Structure
+    Correctness − Data structure implementation should implement its interface correctly.m
+    Time Complexity − Running time or the execution time of operations of data structure must be as small as possible.
+    Space Complexity − Memory usage of a data structure operation should be as little as possible.
+
+#Execution Time Cases
+
+There are three cases which are usually used to compare various data structure's execution time in a relative manner.
+    Worst Case − This is the scenario where a particular data structure operation takes maximum time it can take. If an operation's worst case time is ƒ(n) then this operation will not take more than ƒ(n) time where ƒ(n) represents function of n.
+    Average Case − This is the scenario depicting the average execution time of an operation of a data structure. If an operation takes ƒ(n) time in execution, then m operations will take mƒ(n) time.
+    Best Case − This is the scenario depicting the least possible execution time of an operation of a data structure. If an operation takes ƒ(n) time in execution, then the actual operation may take time as the random number which would be maximum as ƒ(n).
+
+
+#Basic DSA Terminologies
+    Data − Data are values or set of values.
+    Data Item − Data item refers to single unit of values.
+    Group Items − Data items that are divided into sub items are called as Group Items.
+    Elementary Items − Data items that cannot be divided are called as Elementary Items.
+    Attribute and Entity − An entity is that which contains certain attributes or properties, which may be assigned values.
+    Entity Set − Entities of similar attributes form an entity set.
+    Field − Field is a single elementary unit of information representing an attribute of an entity.
+    Record − Record is a collection of field values of a given entity.
+    File − File is a collection of records of the entities in a given entity set.
+
+
+####Data Structures - Algorithms Basics
+
+Algorithm is a step-by-step procedure, which defines a set of instructions to be executed in a certain order to get the desired output. Algorithms are generally created independent of underlying languages, i.e. an algorithm can be implemented in more than one programming language.
+
+From the data structure point of view, following are some important categories of algorithms −
+    Search − Algorithm to search an item in a data structure.
+    Sort − Algorithm to sort items in a certain order.
+    Insert − Algorithm to insert item in a data structure.
+    Update − Algorithm to update an existing item in a data structure.
+    Delete − Algorithm to delete an existing item from a data structure.
+
+#Characteristics of an Algorithm
+Not all procedures can be called an algorithm. An algorithm should have the following characteristics −
+    Unambiguous − Algorithm should be clear and unambiguous. Each of its steps (or phases), and their inputs/outputs should be clear and must lead to only one meaning.
+    Input − An algorithm should have 0 or more well-defined inputs.
+    Output − An algorithm should have 1 or more well-defined outputs, and should match the desired output.
+    Finiteness − Algorithms must terminate after a finite number of steps.
+    Feasibility − Should be feasible with the available resources.
+    Independent − An algorithm should have step-by-step directions, which should be independent of any programming code.
+
+
+####Data Structures - Asymptotic Analysis
+https://www.tutorialspoint.com/data_structures_algorithms/asymptotic_analysis.htm
+
+
+####Data Structure Basics
+
+#Data Definition
+Data Definition defines a particular data with the following characteristics.
+    Atomic − Definition should define a single concept.
+    Traceable − Definition should be able to be mapped to some data element.
+    Accurate − Definition should be unambiguous.
+    Clear and Concise − Definition should be understandable.
+
+#Data Object
+Data Object represents an object having a data.
+
+#Data Type
+Data type is a way to classify various types of data such as integer, string, etc. which determines the values that can be used with the corresponding type of data, the type of operations that can be performed on the corresponding type of data. There are two data types −
+    Built-in Data Type
+    Derived Data Type
+
+#Built-in Data Type
+Those data types for which a language has built-in support are known as Built-in Data types. For example, most of the languages provide the following built-in data types.
+    Integers
+    Boolean (true, false)
+    Floating (Decimal numbers)
+    Character and Strings
+
+#Derived Data Type
+Those data types which are implementation independent as they can be implemented in one or the other way are known as derived data types. These data types are normally built by the combination of primary or built-in data types and associated operations on them. For example −
+    List
+    Array
+    Stack
+    Queue
+
+#Basic Operations
+The data in the data structures are processed by certain operations. The particular data structure chosen largely depends on the frequency of the operation that needs to be performed on the data structure.
+    Traversing
+    Searching
+    Insertion
+    Deletion
+    Sorting
+    Merging
+
+
+
+####Data Structures and Types
+Data structures are introduced in order to store, organize and manipulate data in programming languages. They are designed in a way that makes accessing and processing of the data a little easier and simpler. These data structures are not confined to one particular programming language; they are just pieces of code that structure data in the memory.
+
+Data types are often confused as a type of data structures, but it is not precisely correct even though they are referred to as Abstract Data Types. Data types represent the nature of the data while data structures are just a collection of similar or different data types in one.
+
+There are usually just two types of data structures −
+    Linear
+    Non-Linear
+
+#Linear Data Structures
+
+The data is stored in linear data structures sequentially. These are rudimentary structures since the elements are stored one after the other without applying any mathematical operations.
+Linear Data Structures
+
+Linear data structures are usually easy to implement but since the memory allocation might become complicated, time and space complexities increase. Few examples of linear data structures include −
+    Arrays
+    Linked Lists
+    Stacks
+    Queues
+
+Based on the data storage methods, these linear data structures are divided into two sub-types. They are − static and dynamic data structures.
+Static Linear Data Structures
+
+In Static Linear Data Structures, the memory allocation is not scalable. Once the entire memory is used, no more space can be retrieved to store more data. Hence, the memory is required to be reserved based on the size of the program. This will also act as a drawback since reserving more memory than required can cause a wastage of memory blocks.
+
+The best example for static linear data structures is an array.
+
+#Dynamic Linear Data Structures
+
+In Dynamic linear data structures, the memory allocation can be done dynamically when required. These data structures are efficient considering the space complexity of the program.
+
+Few examples of dynamic linear data structures include: linked lists, stacks and queues.
+Non-Linear Data Structures
+
+Non-Linear data structures store the data in the form of a hierarchy. Therefore, in contrast to the linear data structures, the data can be found in multiple levels and are difficult to traverse through.
+Non-Linear Data Structures
+
+However, they are designed to overcome the issues and limitations of linear data structures. For instance, the main disadvantage of linear data structures is the memory allocation. Since the data is allocated sequentially in linear data structures, each element in these data structures uses one whole memory block. However, if the data uses less memory than the assigned block can hold, the extra memory space in the block is wasted. Therefore, non-linear data structures are introduced. They decrease the space complexity and use the memory optimally.
+
+Few types of non-linear data structures are −
+    Graphs
+    Trees
+    Tries
+    Maps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
