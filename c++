@@ -194,7 +194,6 @@ Data types in C++ specify the types of data variables that may be stored, as wel
     User-defined
 
 1. Fundamental (Built-in) Data Types:
-
 These data types serve as the basis for data representation and are predefined by the C++ language. They establish the types of data a variable can hold, how much memory it can hold, and what activities it may be used for. Among these, integer types are frequently used for indexing, general data storage, and numerical computations. These are fundamental types:
 
     Integer Types
@@ -221,6 +220,22 @@ Example:
 iv. Long int: Usually takes up 4 or 8 bytes, this type of int is used for storing large numbers than a regular int. The system architecture determines its range, although on a 32-bit system, it is comparable to int.
 Example:
     long int a = 1000000;  
+Example:
+#include <iostream>  
+using namespace std;
+
+int main()   
+{  
+     int a = 13;           
+     unsigned int b = 28;      
+     short int c = 32747;       
+     long int  d = 1000000;  
+     cout << "The value of a is: " << a << " " << sizeof(a) << endl;  
+     cout << "The value of b is: " << b << " " << sizeof(b) << endl;  
+     cout << "The value of c is: " << c << " " << sizeof(c) << endl;  
+     cout << "The value of d is: " << d << " " << sizeof(d) << endl;  
+     return 0;  
+}
 
 
 b. Floating-Point Types:
@@ -237,13 +252,47 @@ Example:
 iii. long double (Extended Precision): For scientific calculations that demand a high level of accuracy, long double (Extended Precision) is utilized. It utilizes more than 10 bytes and provides 19 to 21 decimal places of accuracy.
 Example:
     long double h = 6.987271836478124679L;  
+Example:
+#include <iostream>  
+#include <iomanip>   
+using namespace std;
+
+int main()    
+{  
+     float f_1 = 3.1415926535f;       
+     double d_2 = 3.1415926535;       
+     long double ld_3 = 3.141592653589793238L;    
+     cout << fixed << setprecision(10);    
+     cout << "The float value is: " << f_1 << "   " << sizeof(f_1) << endl;  
+     cout << "The double value is: " << d_2 << "   " << sizeof(d_2)<< endl;  
+     cout << "The long double value is: " << ld_3 << "   " << sizeof(ld_3)<< endl;  
+     return 0;  
+} 
 
 
 c. Character Type (char):
 In C++, a single character can be stored in a single byte (8 bits) of memory by utilizing the char data type. The ASCII (American Standard Code for Information Interchange) encoding is mostly used to represent characters. However, wchar_t, char16_t, and char32_t are utilized to provide UTF-16 and UTF-32 encoding for Unicode characters. These data types can be used to represent any character from the ASCII or Unicode set, including numbers, letters, symbols, and more.
 Example:
     char letter = 'A';  
+Example:
+#include <iostream>  
+using namespace std;
 
+int main()   
+{  
+     char ch = 'C';    
+     char d = '7';  
+     char s = '$';  
+     cout << "Character: " << ch << endl;  
+     cout << "Digit: " << d << endl;  
+     cout << "Symbol: " << s << endl;  
+     // Displaying ASCII values  
+     cout << "Size of char: " << sizeof(ch) << endl;
+     cout << "The ASCII of " << ch << " is " << int(ch) << endl;  
+     cout << "The ASCII of " << d << " is " << int(d) << endl;  
+     cout << "The ASCII of " << s << " is " << int(s) << endl;  
+     return 0;  
+}
 
 d. Boolean Type (bool):
 In C++, the Boolean data type (bool) stores logical values that encode the concepts of true and false. In control flow, conditional statements, and decision-making, it is primarily used for the effective evaluation of logical expressions and conditions.
@@ -251,10 +300,44 @@ In C++, the Boolean data type (bool) stores logical values that encode the conce
 Example:
     bool b = true;  
     bool f = false;  
+Example:
+#include <iostream>  
+using namespace std;  
+
+int main()   
+{  
+     bool isLoggedIn = true;  
+     bool hasAccess = false;  
+     cout << "User logged in: " << isLoggedIn << endl;  
+     cout << "User has access: " << hasAccess << endl;  
+     if (isLoggedIn && hasAccess)   
+     {  
+          cout << "Access granted!" << endl;  
+     }  
+     else  
+     {  
+          cout << "Access denied!" << endl;  
+     }  
+     return 0;  
+}
 
 e. Void Type (void):
 
 The void type in C++ denotes the lack of a data type. It is mostly used to define generic pointers, which specifies that a function does not return a value, and determine functions with undefined arguments. In contrast to other data types, void has no value and cannot be used directly to declare variables.
+Example:
+#include <iostream>
+using namespace std;
+
+void test()
+{
+     cout << "This is void return type.\n";
+}
+
+int main()
+{
+     test();
+     return 0;
+}
 
 
 2. Derived Data Types
@@ -283,10 +366,237 @@ iii. Dynamic arrays:
 Runtime dynamic array allocation is accomplished with pointers and new keywords. They need to be manually deallocated, but they allow flexible memory usage.
 Example:
     int* a = new int[5]; delete[] a;  
+Example:
+#include <iostream>  
+using namespace std;  
+int main()   
+{  
+     // 1. One-Dimensional Array  
+     int a[5] = {10, 20, 30, 40, 50};  
+     cout << "One-Dimensional Array:" << endl;  
+     for (int q = 0; q < 5; q++)   
+     {  
+          cout << a[q] << " ";  
+     }  
+     cout << "\n\n";  
+     // 2. Two-Dimensional Array (2x3 Matrix)  
+     int b[2][3] = {  
+          {21, 42, 35},  
+          {54, 87, 64}  
+     };  
+     cout << "Two-Dimensional Array (Matrix):" << endl;  
+     for (int q = 0; q < 2; q++)   
+     {  
+          for (int k = 0; k < 3; k++)  
+          {  
+               cout << b[q][k] << " ";  
+          }  
+          cout << endl;  
+     }  
+     cout << "\n";  
+     // 3. Dynamic Array (Size taken from the user)  
+     int size;  
+     cout << "Enter the size of the dynamic array: ";  
+     cin >> size;  
+     // Allocating memory dynamically  
+     int* c = new int[size];  
+     // Initializing dynamic array  
+     for (int q = 0; q < size; q++)  
+     {  
+          c[q] = (q + 1) * 10;  
+     }  
+     cout << "Dynamic Array:" << endl;  
+     for (int q = 0; q < size; q++)   
+     {  
+          cout << c[q] << " ";  
+     }  
+     cout << "\n";  
+     // Freeing dynamically allocated memory  
+     delete[] c;  
+     return 0;  
+}  
 
 
 b. Pointers:
 A pointer is a variable that holds the address of another variable in memory. It improves the efficiency of memory manipulation by storing a reference to a memory location rather than a direct value. Data structures, dynamic memory allocation, function pointers, and efficient parameter passing in functions all depend on pointers.
+Example:
+#include <iostream>  
+using namespace std;  
+int main()   
+{  
+     int a = 100;  
+     int* ptr = &a;  
+     int** ptr1 = &ptr;
+     int*** ptr2 = &ptr1;
+     int**** ptr3 = &ptr2;
+     int***** ptr4 = &ptr3;
+     cout << "The value of is: " << a << endl;  
+     cout << endl;   
+
+     cout << "The value of is: " << a << endl;  
+     cout << "The address of is: " << &a << endl;  
+     cout << "The pointer ptr stores address: " << ptr << endl;  
+     cout << "The value pointed by ptr: " << *ptr << endl;   
+     cout << endl;   
+
+     cout << "The value pointed by ptr1: " << &ptr << endl;   
+     cout << "The value pointed by ptr2: " << ptr1 << endl;   
+     cout << "The value pointed by ptr3: " << *ptr1 << endl;   
+     cout << "The value pointed by ptr4: " << **ptr1 << endl;   
+     cout << endl;   
+
+     cout << "The value pointed by ptr4: " << &ptr1 << endl;   
+     cout << "The value pointed by ptr5: " << ptr2 << endl;   
+     cout << "The value pointed by ptr6: " << *ptr2 << endl;   
+     cout << "The value pointed by ptr7: " << **ptr2 << endl;   
+     cout << "The value pointed by ptr8: " << ***ptr2 << endl;   
+     cout << endl;   
+
+     cout << "The value pointed by ptr9: " << &ptr2 << endl;   
+     cout << "The value pointed by ptr10: " << ptr3 << endl;   
+     cout << "The value pointed by ptr11: " << *ptr3 << endl;   
+     cout << "The value pointed by ptr12: " << **ptr3 << endl;   
+     cout << "The value pointed by ptr13: " << ***ptr3 << endl;   
+     cout << "The value pointed by ptr14: " << ****ptr3 << endl;   
+     cout << endl;   
+
+     cout << "The value pointed by ptr15: " << &ptr3 << endl;   
+     cout << "The value pointed by ptr16: " << ptr4 << endl;   
+     cout << "The value pointed by ptr17: " << *ptr4 << endl;   
+     cout << "The value pointed by ptr18: " << **ptr4 << endl;   
+     cout << "The value pointed by ptr19: " << ***ptr4 << endl;   
+     cout << "The value pointed by ptr20: " << ****ptr4 << endl;   
+     cout << "The value pointed by ptr21: " << *****ptr4 << endl;   
+
+     return 0;  
+}
+
+c. References:
+A reference is an alias for another variable in C++. Instead of creating a new storage location, a reference simply modifies the name of an existing variable. It indicates that the original variable is directly impacted by any changes performed using the reference.
+Example:
+#include <iostream>  
+using namespace std;  
+
+int main()   
+{  
+    int num = 5;  
+    int& ref = num;    
+    cout << "Original value: " << num << endl;  
+    ref = 10;  // Changing ref also changes num  
+    cout << "Modified value: " << num << endl;  
+    return 0;  
+}
+
+3. User-Defined Data Types:
+By using user-defined data types, programmers can construct different types in C++ in addition to the basic types that are already built in. These kinds support modular programming, data organization, and code readability. They make complex programs easier to manage and organize by allowing related variables and capabilities to be grouped under a single name.
+Types of User-Defined Data Types:
+Several types of user-defined data types in C++ are as follows:
+    Struct
+    Class
+    Union
+    Enumeration (enum)
+    Typedef and Using
+
+1. Struct:
+A user-defined data type known as a structure (struct) allows several variables of various data types to be combined under a single identifier. It facilitates related data organization and makes code easier to read and manage. Real-world things with numerous qualities, like a student, employee, or automobile, are frequently represented as structures.
+Example:
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+struct data {
+     int age;
+     string name;
+     string work;
+};
+
+void output(const data& d, int& ag, string& na, string& wo)
+{
+     ag = d.age;
+     na = d.name;
+     wo = d.work;
+}
+
+int main(int argc, char* argv[])
+{
+     int a;
+     cout << "Enter age: ";
+     cin >> a;
+     cin.ignore(); // This removes the '\n' left in the input buffer
+     string st;
+     cout << "Enter Name: ";
+     getline(cin, st);
+     string st1;
+     cout << "Enter Profession: ";
+     getline(cin, st1);
+     data dta = {a, st, st1};
+     int x;
+     string y, z;
+     cout << endl;
+     output(dta, x, y, z); 
+     {
+          cout << "Full Name: " << y << endl;
+          cout << "Age of " << y << " : " << x << endl;
+          cout << "Profession of " << y << " is: " << z << endl;
+     }
+     return 0;
+}
+
+
+b. Class
+A class is a crucial part of object-oriented programming (OOP) in C++. It functions as an object creation blueprint and is a user-defined data type. Data members, or variables, and member functions, or methods, are contained within a class and provide the characteristics and actions of the objects that are instantiated from it. This encapsulation ensures program modularity and reusability by promoting data abstraction and hiding.
+Example:
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+class Dog 
+{
+     private:
+          string breed;
+     public:
+          Dog (string brd)
+          {
+               breed = brd;
+          }
+          void showBreed ()
+          {
+               cout << "Dog Breed: " << breed << endl;
+               if(breed == "Rotweller")
+                    cout << "Very loyal to master, strong and heavy in weight.\n";
+               else
+                    cout << "Very loyal to master, friendly, troublesome as well as very annoying, strong and light in weight.\n";
+          }
+};
+
+int main(int argc, char* argv[])
+{
+     //cin.ignore();
+     string st;
+     cout << "Enter dog breed: ";
+     getline(cin, st);
+
+     string st1;
+     cout << "Enter another dog breed: ";
+     getline(cin, st1);
+     cout << endl;
+     Dog dog1(st);
+     Dog dog2(st1);
+     dog1.showBreed();
+     dog2.showBreed();
+     return 0;
+}
+
+c. Union:
+Unions are user-defined data types that enable combining many data types into a single entity, much like structures. A union's members all share the same memory location, in contrast to structures. Because updating one will overwrite previous data, only one member can hold a value at a time.
+Example:
+
+d. Enumeration (enum):
+In C++, integral constants are typically given meaningful names using an enumeration (enum), a user-defined data type. Instead of utilizing raw integers, developers can use enumeration to construct a set of named integer constants, which improves the program's readability, structure, and maintainability.
+
+
 
 
 

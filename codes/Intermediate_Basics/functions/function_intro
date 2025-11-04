@@ -1,0 +1,112 @@
+The function in C++ language is also known as a procedure or subroutine in other programming languages. A program implements functions as independent blocks of code that complete single tasks, which developers can call repeatedly. Programming efficiency and organization improve through the use of functions because they make code reusable between different modules.
+
+In C++ programming language, we can create functions to perform any task. A function can be called many times. It provides modularity and code reusability.
+
+Syntax of C++ Function:
+The syntax for creating functions in C++ language is given below:
+return_type function_name(data_type parameter...)    
+{      
+     //code to be executed      
+}    
+
+In order to declare a function, we specify its return type, name, and parameter list.
+Return Type: It specifies the value type, which is returned by the function. If the function does not return any of the values, the return type is void in the program.
+Function Name: It is an identifier that defines the name of the function.
+Parameter list: A comma-separated list of parameters is accepted by the function. Every function parameter has a type and a name.
+
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int maxValue(int x, int y);
+
+int main(int argc, char* argv[])
+{
+     int a = 10, b = 99;
+     if(argc > 1)
+     {
+          if(argv[1][0] != '\0')
+               a = atoi(argv[1]);
+
+          if(argc > 2 && argv[2][0] != '\0')
+               b = atoi(argv[2]);
+     }
+     int res = maxValue(a, b);
+     cout << "Larger Number is: " << res << " between " << a << " & " << b << endl; 
+     return 0;
+}
+
+int maxValue(int x, int y)
+{
+     return (x > y) ? x : y;
+}
+
+#Definition and Declaration of a Function:
+In C++ programming language, functions can be defined and declared individually. The declaration is also known as a function prototype, which informs the compiler about the name of the function, return type, and parameters without providing the function's body. Function initialization refers to defining a function and then calling it with actual values.
+
+Function Declaration:
+int maxValue(int x, int y);
+
+Function Definition:
+int maxValue(int x, int y)
+{
+     return (x > y) ? x : y;
+}
+
+Function Initialization:
+Function initialization refers to defining a function and then calling it with actual values.
+int main(int argc, char* argv[])
+{
+     int a = 10, b = 99;
+     if(argc > 1)
+     {
+          if(argv[1][0] != '\0')
+               a = atoi(argv[1]);
+
+          if(argc > 2 && argv[2][0] != '\0')
+               b = atoi(argv[2]);
+     }
+     int res = maxValue(a, b);
+     cout << "Larger Number is: " << res << " between " << a << " & " << b << endl; 
+     return 0;
+}
+
+#Function Parameters:
+    Pass by value: In Pass by Value, a copy of the actual parameter is passed to the function. It means any modifications made inside the function do not affect the original variable.
+
+C++ Pass by Value Example:
+Let us take an example to illustrate the pass by value in C++.
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+long long int fact(int num);
+
+int main(int argc, char* argv[])
+{
+     int a = 10;
+     if(argc > 1)
+     {
+          if(argv[1][0] != '\0')
+               a = atoi(argv[1]);
+     }
+     long long int res = fact(a);
+     cout << "Factorial of " << a << " is : " << res << endl;
+     return 0;
+}
+
+long long int fact(int num)
+{
+     int fct = 1;
+     for(int i = 2; i<=num;i++)
+     {
+          fct *= i;
+     }
+     return fct;
+}
+
+
+
+
