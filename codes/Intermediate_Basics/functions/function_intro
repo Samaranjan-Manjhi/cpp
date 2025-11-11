@@ -55,7 +55,7 @@ int maxValue(int x, int y)
 }
 
 Function Initialization:
-Function initialization refers to defining a function and then calling it with actual values.
+     Function initialization refers to defining a function and then calling it with actual values.
 int main(int argc, char* argv[])
 {
      int a = 10, b = 99;
@@ -73,39 +73,261 @@ int main(int argc, char* argv[])
 }
 
 #Function Parameters:
-    Pass by value: In Pass by Value, a copy of the actual parameter is passed to the function. It means any modifications made inside the function do not affect the original variable.
+Pass by value: In Pass by Value, a copy of the actual parameter is passed to the function. It means any modifications made inside the function do not affect the original variable.
 
 C++ Pass by Value Example:
 Let us take an example to illustrate the pass by value in C++.
-#include <iostream>
-#include <stdio.h>
+#include<iostream>  
+using namespace std;  
 
-using namespace std;
+void square(int num) 
+{  
+     num = num * num;    
+}
 
-long long int fact(int num);
-
-int main(int argc, char* argv[])
-{
-     int a = 10;
-     if(argc > 1)
-     {
-          if(argv[1][0] != '\0')
-               a = atoi(argv[1]);
-     }
-     long long int res = fact(a);
-     cout << "Factorial of " << a << " is : " << res << endl;
+int main() 
+{  
+     int x = 5;  
+     square(x);  
+     cout << x << endl;  // Output: 5 (unchanged)  
      return 0;
 }
+Output:- 5
 
-long long int fact(int num)
-{
-     int fct = 1;
-     for(int i = 2; i<=num;i++)
-     {
-          fct *= i;
-     }
-     return fct;
+Pass by reference: In Pass by Reference, a function receives the actual memory address of the argument instead of a copy. It means any changes made inside the function directly affect the original variable.
+
+C++ Pass by Reference Example:
+Let us take an example to illustrate the pass by reference in C++.
+#include<iostream>  
+using namespace std;  
+
+void square(int &num) 
+{  
+     num = num * num;  
+}  
+
+int main() 
+{  
+     int x = 5;  
+     square(x);  
+     cout << x << endl;  // Output: 25 (modified)  
+     return 0;
 }
+Output:- 25
+
+Pass by Pointers: In Pass by Pointer, we pass the memory address of a variable using a pointer. The function modifies the value stored at the given address.
+
+C++ Pass by Pointers Example:
+Let us take an example to illustrate the pass by pointer in C++.
+#include<iostream>
+using namespace std;  
+
+void updateValue(int *ptr) 
+{
+     *ptr = 20; // Modifies the value of the variable  
+}  
+
+int main() 
+{
+     int num = 10;  
+     cout << "Before: " << num << endl;
+     updateValue(&num); // Passing address of num  
+     cout << "After: " << num << endl;
+     return 0;  
+}
+Output:- 
+Before: 10
+After: 20
+
+Why do we use Functions in C++?
+Structured and modular programming heavily depends on the implementation of functions for successful operations. These are the essential reasons that functions serve a vital purpose in C++ development:
+Programmers can divide comprehensive programs into smaller managed sections through the use of functions.
+Specific functionality is encapsulated within functions to block unauthorized changes or data interference.
+The implementation of functions leads to an improvement in program speed along with smaller code dimensions due to function reuse.
+Functions serve as a mechanism to shield implementations from users while creating code, which users can easily understand.
+The use of functions enables larger projects to become more expandable and modifiable due to easier scalability.
+Multiple use of identical code is eliminated when functions provide structured and reusable logical organization.
+
+Advantages of functions in C++:
+
+There are many advantages of functions.
+1. Code Reusability:
+By creating functions in C++, we can call it many times. Therefore, we don't need to write the same code again and again.
+
+2. Code optimization:
+It makes the code optimized, we don't need to write much code. Suppose we have to check 3 numbers (531, 883 and 781) whether it is prime numbers or not. Without using the function, we need to write the prime number logic 3 times. Therefore, there is repetition of code. However, if we use functions, we need to write the logic only once, and we can reuse it several times.
+
+3. Improved Readability and Maintainability:
+A program becomes more readable and maintainable when users divide their complex code base into smaller manageable sections through functions.
+
+4. Debugging and Testing Made Easier:
+Functions assist debugging because program errors become confined to single functions. Individual functions need testing before addition to the main program to verify their correct behaviors.
+
+5. Encourages Modularity:
+When used to build functions, it leads to modular programming, which enables individual functions to execute separate tasks, which results in a superior program structure.
+
+1. What is a function in C++?
+The C++ programming language contains functions, which serve as distinct programming elements that execute particular functionalities. A function in C++ works as a code block, which organizes programs into modular units while reducing repetition. Functions serve multiple program calls to enhance program performance as well as improve program upkeep capabilities.
+
+2. Why should we use functions in C++?
+Functions are used in C++ to:
+Foreign functions become more reusable when repetition gets removed from the codebase.
+Programs that are divided into manageable modules become easier to manage through this enhancement.
+In order to streamline debugging operations, functions should be used to contain errors.
+The logical arrangement of code into blocks creates better code readability.
+Fewer lines of code result in improved system performance while also enhancing maintainability.
+
+3. What are the types of functions in C++?
+There exist three types of functions in C++, along with their classifications.
+Library Functions include the set of predefined functions available in C++ programming language (example: sqrt(), abs(), ceil()).
+Programming teams develop their own Functions when they need to execute particular tasks.
+
+4. What is the syntax for defining a function in C++?
+In order to define functions in C++ programmers, use this pattern as syntax base:
+return_type function_name(parameter_list) 
+{    
+     The executable code appears inside the function body.    
+}  
+
+For example:
+int add(int a, int b) 
+{    
+     return a + b;    
+}  
+
+5. How do functions improve code efficiency?
+Functions improve efficiency by:
+Program efficiency increases due to limited repetition because function logic does not need manual repetition in different sections.
+Through the organization, functions become easier to comprehend while improving their structure.
+Repetitive changes become simpler since maintenance modifications only need to be made from one specific destination point rather than distributed throughout various locations.
+
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Feature                    | Pass By Value                                 | Pass By Reference                          |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Definition                 | A copy of the actual value is passed to the   | A reference (memory address) to the        |
+|                            | function.                                     | actual variable is passed to the function. |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Effect on Original Variable| The original variable remains unchanged.      | The original variable can be modified.     |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Memory Usage               | More memory is used as a copy of the value    | Less memory is used as only the reference  |
+|                            | is created.                                   | is passed.                                 |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Changes Inside the Function| Changes made inside the function do not       | Changes made inside the function affect    |
+|                            | affect the original variable.                 | the original variable.                     |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Common in                  | C, Java (for primitive types).                | C++ (using pointers/references),           |
+|                            |                                               | JavaScript (objects), Python (mutable types).|
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Parameter Passing          | The function works with a copy of the         | The function works directly with the       |
+|                            | argument.                                     | original variable (via reference).         |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Speed                      | Generally slower as copies need to be made.   | Generally faster as only a reference is    |
+|                            |                                               | passed.                                    |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Example in C               | void func(int x) { x = 5; }                   | void func(int *x) { *x = 5; }              |
+| (Pass By Value)            | int a = 10; func(a); // a remains 10          | int a = 10; func(&a); // a becomes 5       |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Example in C++             | void func(int x) { x = 5; }                   | void func(int &x) { x = 5; }              |
+| (Pass By Reference)        | int a = 10; func(a); // a remains 10          | int a = 10; func(a); // a becomes 5       |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+Key Takeaways:
+Pass by Value ensures that the original data is protected from changes inside the function, while 
+Pass by Reference allows the function to modify the original data.
+
+
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Feature                    | Pass By Pointer                               | Pass By Reference                          |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Definition                 | A pointer (memory address) of the variable    | A reference (alias) to the variable is     |
+|                            | is passed to the function.                    | passed to the function.                    |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Memory Access              | Indirect access via pointer (dereferencing is| Direct access to the original variable.    |
+          |                            | required).                                    | No need for dereferencing.                 |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Modifying the Variable     | Can modify the variable through pointer deref.| Can modify the variable directly.          |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Nullability                | Pointers can be `NULL` (or `nullptr` in C++)  | References must always point to a valid    |
+|                            | and need to be checked.                       | variable and cannot be `NULL`.             |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Syntax                     | Uses the `*` operator for dereferencing and   | Uses the `&` operator to define a reference.|
+|                            | `&` to get the address of the variable.       |                                             |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Pointer Arithmetic         | Pointer arithmetic is possible (e.g., moving  | No pointer arithmetic.                     |
+          |                            | the pointer to another memory location).      |                                             |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Common in                  | C, C++ (using pointers with `*` and `&`).     | C++ (using references with `&`).            |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Memory Usage               | Uses extra memory for the pointer itself.     | More memory efficient (only reference is   |
+          |                            |                                               | passed).                                   |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Ease of Use                | Requires explicit null checks and deref.      | Easier to use and safer, no dereferencing. |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Example in C/C++           | void func(int* ptr) { *ptr = 10; }            | void func(int &ref) { ref = 10; }          |
+| (Pass By Pointer)          | int a = 5; func(&a); // a becomes 10          | int a = 5; func(a); // a becomes 10        |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+| Error Handling             | Pointers can be `NULL` and must be handled    | No need to handle `NULL` references.       |
+|                            | explicitly.                                   |                                             |
++----------------------------+-----------------------------------------------+---------------------------------------------+
+Key Differences:
+Pointer Arithmetic: Pass By Pointer allows pointer arithmetic, whereas Pass By Reference does not.
+Nullability: Pass By Pointer can be NULL or invalid, requiring checks. Pass By Reference cannot be NULL, making it safer.
+Ease of Use: Pass By Reference is generally simpler to work with and safer, as no dereferencing or NULL checks are needed.
+
+
+#Recursive Function
+Recursion is a programming technique where a function calls itself over again and again with modified arguments until it reaches its base case, where the recursion stops.
+It breaks a problem down into smaller, more manageable sub-problems, recursion allows for elegant and better solutions to complex problems.
+
+Recursive Function
+A recursive function is a function which is particularly used for recursion where a function calls itself, either directly or indirectly, to address a problem. It must include at least one base case to terminate the recursion and one recursive case where the function invokes itself.
+Base Case − Its a case where recursion stops or ends after reaching that particular condition.
+Recursive Case − Its a case where a function calls itself over again with decremented value until and unless it reaches its base case.
+
+#Creating a Recursive Function
+The following syntax is used to implement a recursive function in C++ −
+function name(param_1, param_2..)
+{
+   <base condition>
+   <function body>
+   <return statement>
+}
+
+Here,
+    Where, function name(param_1, param_2..) is a function declared as "name" passing with multiple parameters in it as per requirement.
+    Now the function body is being divided into three sub-categories : base condition, function body and return statement.
+    In base condition we will define its base case, where recursion has to stop or end.
+    In the function body, a recursive case will be defined, where we need to call the function over again and again as per requirement.
+    At last, the return statement will return the final output of the function.
+
+Calling a Recursive Function
+Calling a recursive function is just like calling any other function, where you will use the function's name and provide the necessary parameters in int main() body.
+
+To call a recursive function, use the following syntax −
+func_name(value);
+
+Example of Recursion
+Below is an example of a recursion function in C++. Here, we are calculating the factorial of a number using the recursion −
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
