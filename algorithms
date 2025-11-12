@@ -1,0 +1,244 @@
+All Searching Algorithms
+Linear/Sequential Searches
+
+Linear Search
+Sentinel Linear Search
+Meta Binary Search (One-Sided Binary Search)
+Ubiquitous Binary Search
+
+Interval/Divide Searches
+
+Binary Search
+Ternary Search
+Jump Search
+Interpolation Search
+Exponential Search
+Fibonacci Search
+Sublist Search
+
+Tree-Based Searches
+
+Binary Search Tree (BST) Search
+AVL Tree Search
+Red-Black Tree Search
+B-Tree Search
+B+ Tree Search
+Splay Tree Search
+Treap Search
+Trie Search (Prefix Tree)
+Suffix Tree Search
+Segment Tree Search
+Fenwick Tree Search (Binary Indexed Tree)
+
+Hash-Based Searches
+
+Hash Table Search
+Direct Address Table Search
+Separate Chaining Search
+Open Addressing Search
+Double Hashing Search
+Cuckoo Hashing Search
+Perfect Hashing Search
+Bloom Filter Search
+
+Graph Searches
+
+Breadth-First Search (BFS)
+Depth-First Search (DFS)
+Bidirectional Search
+A* Search
+Dijkstra's Search
+Bellman-Ford Search
+Best-First Search
+Uniform Cost Search
+Iterative Deepening Search
+Branch and Bound Search
+
+String Searches
+
+Naive String Search
+Rabin-Karp Algorithm
+Knuth-Morris-Pratt (KMP) Algorithm
+Boyer-Moore Algorithm
+Z Algorithm
+Aho-Corasick Algorithm
+Suffix Array Search
+Manacher's Algorithm
+
+Advanced/Specialized Searches
+
+Skip List Search
+Van Emde Boas Tree Search
+Fusion Tree Search
+X-Fast Trie Search
+Y-Fast Trie Search
+Locality-Sensitive Hashing (LSH)
+Quantum Search (Grover's Algorithm)
+
+
+All Sorting Algorithms
+Comparison-Based Sorts
+Simple Sorts (O(n²))
+
+Bubble Sort
+Selection Sort
+Insertion Sort
+Cocktail Sort (Bidirectional Bubble Sort)
+Gnome Sort
+Odd-Even Sort
+
+Efficient Sorts (O(n log n))
+
+Merge Sort
+Quick Sort
+Heap Sort
+Shell Sort
+Tree Sort
+Cube Sort
+Tim Sort
+Intro Sort (Introspective Sort)
+Smooth Sort
+Tournament Sort
+
+Hybrid Sorts
+
+Quick Sort + Insertion Sort
+Merge Sort + Insertion Sort
+Block Sort (Block Merge Sort)
+Library Sort (Gapped Insertion Sort)
+
+Non-Comparison Sorts
+Linear Time Sorts
+
+Counting Sort
+Radix Sort
+Bucket Sort
+Pigeonhole Sort
+Flash Sort
+
+Specialized Sorts
+For Specific Data
+
+Bead Sort (Gravity Sort)
+Pancake Sort
+Stooge Sort
+Bitonic Sort
+Batcher's Sort
+Cycle Sort
+Strand Sort
+Tag Sort
+
+Parallel/Concurrent Sorts
+
+Parallel Merge Sort
+Parallel Quick Sort
+Sample Sort
+Bitonic Merge Sort
+Odd-Even Merge Sort
+Pairwise Sorting Network
+
+External Sorts (For Disk/Tape)
+
+External Merge Sort
+Polyphase Merge Sort
+Cascade Merge Sort
+Oscillating Merge Sort
+Balanced Merge Sort
+
+Distribution Sorts
+
+Postman Sort
+Proxmap Sort
+Burst Sort
+Spreadsort
+
+Exchange Sorts
+
+Comb Sort
+Circle Sort
+
+Insertion Sorts (Variants)
+
+Binary Insertion Sort
+List Insertion Sort
+Tree Insertion Sort
+
+Selection Sorts (Variants)
+
+Bidirectional Selection Sort
+Heap Selection Sort
+Bingo Sort
+
+Merge Sorts (Variants)
+
+In-Place Merge Sort
+K-Way Merge Sort
+Cascade Merge Sort
+Polyphase Merge Sort
+
+Quick Sort Variants
+
+Randomized Quick Sort
+Three-Way Quick Sort (Dutch National Flag)
+Dual-Pivot Quick Sort
+Multi-Pivot Quick Sort
+
+Hybrid Advanced Sorts
+
+PDQ Sort (Pattern-Defeating Quicksort)
+WikiSort
+GrailSort
+Sqrt Sort
+
+String/Lexicographic Sorts
+
+MSD Radix Sort (Most Significant Digit)
+LSD Radix Sort (Least Significant Digit)
+Burstsort
+American Flag Sort
+
+Academic/Theoretical Sorts
+
+Bogosort (Stupid Sort)
+Bogobogosort
+Sleep Sort
+Spaghetti Sort
+Stalin Sort
+Miracle Sort
+Quantum Bogosort
+
+Network Sorts
+
+Sorting Network
+Batcher Odd-Even Mergesort
+AKS Network (Optimal Sorting Network)
+
+Adaptive Sorts
+
+Adaptive Heap Sort
+Adaptive Merge Sort
+Natural Merge Sort
+Patience Sort
+
+Memory-Efficient Sorts
+
+In-Place Quick Sort
+In-Place Merge Sort
+In-Place Heap Sort
+Block Sort
+
+Stable Sorts (Preserving Order)
+
+Stable Quick Sort
+Stable Merge Sort
+Stable Counting Sort
+Stable Radix Sort
+
+Specialized Application Sorts
+
+Timsort (Python's default)
+Introsort (C++ STL default)
+Smoothsort
+Cartesian Tree Sort
+Splaysort
+Franceschini's Sort
